@@ -1,0 +1,27 @@
+<head>
+  <title>Loan Management</title>
+</head>
+
+<body>
+  {{> navbar}}
+  {{> yield}}
+</body>
+
+<template name="navbar">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Loan Management</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        {{#if currentUser}}
+          <li><a href="/dashboard">Dashboard</a></li>
+          <li><a href="#" id="logout">Logout</a></li>
+        {{else}}
+          <li><a href="/register">Register</a></li>
+          <li><a href="/login">Login</a></li>
+        {{/if}}
+      </ul>
+    </div>
+  </nav>
+</template>

@@ -1,0 +1,32 @@
+<body>
+    <template name="dashboard">
+        <div class="container">
+          <h2>Dashboard</h2>
+          <!-- Display user-specific information based on their role -->
+          {{#if isAdmin}}
+            {{> adminDashboard}}
+          {{else}}
+            {{#if isBorrower}}
+              {{> borrowerDashboard}}
+            {{else}}
+              {{> lenderDashboard}}
+            {{/if}}
+          {{/if}}
+        </div>
+      </template>
+      
+      <template name="adminDashboard">
+        <h3>Admin Dashboard</h3>
+        <!-- Display complete transactions -->
+      </template>
+      
+      <template name="borrowerDashboard">
+        <h3>Borrower Dashboard</h3>
+        <!-- Display borrower-specific information -->
+      </template>
+      
+      <template name="lenderDashboard">
+        <h3>Lender Dashboard</h3>
+        <!-- Display lender-specific information -->
+      </template>    
+</body>
